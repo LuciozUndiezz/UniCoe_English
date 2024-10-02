@@ -12,10 +12,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
-        <!-- 検索ボタン -->
+        <!-- Search Button -->
         <DockPanel DockPanel.Dock="Top" Margin="0,3,0,3" Height="26">
             <TextBox mah:TextBoxHelper.ClearTextButton="True"
-                     mah:TextBoxHelper.Watermark="検索..."
+                     mah:TextBoxHelper.Watermark="Search..."
                      Text="{Binding SearchText.Value, UpdateSourceTrigger=PropertyChanged}">
                 <TextBox.InputBindings>
                     <KeyBinding Key="Return"/>
@@ -32,16 +32,16 @@
                 </TextBox.Style>
             </TextBox>
         </DockPanel>
-        <!-- 下部ボタン -->
+        <!-- Copy Button -->
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Height="35" Margin="3">
             <Button Style="{StaticResource IconButton}" Command="{Binding CopyCommand}">
                 <DockPanel>
                     <icon:PackIconBoxIcons Kind="RegularCopyAlt" Margin="0,0,4,0"/>
-                    <TextBlock VerticalAlignment="Bottom">コピー</TextBlock>
+                    <TextBlock VerticalAlignment="Bottom">Copy</TextBlock>
                 </DockPanel>
             </Button>
         </StackPanel>
-        <!-- キャラクターリスト -->
+        <!-- Charcter List -->
         <ListView ItemsSource="{Binding FilterdPresets}" SelectedItem="{Binding SelectedPreset.Value}" Margin="0,3,0,0"
                   VirtualizingPanel.IsVirtualizing="False"
                   SelectionMode="Single"

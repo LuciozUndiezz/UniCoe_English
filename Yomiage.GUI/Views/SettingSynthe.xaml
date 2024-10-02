@@ -33,10 +33,10 @@
         </GroupBox>-->
         <GroupBox Margin="0,5,0,0">
             <GroupBox.Header>
-                <Label Margin="3,0,3,0">テキスト</Label>
+                <Label Margin="3,0,3,0">Text</Label>
             </GroupBox.Header>
             <StackPanel Margin="10">
-                <CheckBox IsChecked="{Binding SettingService.SplitByEnter}" Margin="0,3,0,3" HorizontalAlignment="Left">改行を文末と見なす</CheckBox>
+                <CheckBox IsChecked="{Binding SettingService.SplitByEnter}" Margin="0,3,0,3" HorizontalAlignment="Left">New Line = New Sentence</CheckBox>
             </StackPanel>
         </GroupBox>
     </StackPanel>

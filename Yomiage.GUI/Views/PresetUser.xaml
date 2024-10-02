@@ -16,19 +16,19 @@
             <Button Style="{StaticResource IconButton}" Command="{Binding CreateCommand}">
                 <DockPanel>
                     <icon:PackIconBoxIcons Kind="RegularNews" Margin="0,0,4,0"/>
-                    <TextBlock VerticalAlignment="Bottom">新規</TextBlock>
+                    <TextBlock VerticalAlignment="Bottom" Text="New"/>
                 </DockPanel>
             </Button>
             <Button Style="{StaticResource IconButton}" Command="{Binding CopyCommand}">
                 <DockPanel>
                     <icon:PackIconBoxIcons Kind="RegularCopyAlt" Margin="0,0,4,0"/>
-                    <TextBlock VerticalAlignment="Bottom">コピー</TextBlock>
+                    <TextBlock VerticalAlignment="Bottom" Text="Copy"/>
                 </DockPanel>
             </Button>
-            <Button Style="{StaticResource IconButton}" Command="{Binding DeleteCommand}">
+            <Button Style="{StaticResource IconButton}" Command="{Binding DeleteCommand}" Click="Button_Click">
                 <DockPanel>
                     <icon:PackIconMaterial Kind="TrashCanOutline" Margin="0,0,4,0"/>
-                    <TextBlock VerticalAlignment="Bottom">削除</TextBlock>
+                    <TextBlock VerticalAlignment="Bottom" Text="Delete"/>
                 </DockPanel>
             </Button>
         </StackPanel>
@@ -43,8 +43,8 @@
                 <icon:PackIconBoxIcons Kind="RegularFilterAlt" Width="14"/>
             </Button>-->
             <TextBox mah:TextBoxHelper.ClearTextButton="True"
-                     mah:TextBoxHelper.Watermark="検索..."
-                     Text="{Binding SearchText.Value, UpdateSourceTrigger=PropertyChanged}">
+                     mah:TextBoxHelper.Watermark="Search..." 
+                     Text="{Binding SearchText.Value, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged">
                 <TextBox.InputBindings>
                     <KeyBinding Key="Return"/>
                 </TextBox.InputBindings>

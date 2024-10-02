@@ -12,61 +12,59 @@
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
     <StackPanel Margin="6">
-        <GroupBox Margin="0,5,0,0">
+        <GroupBox Margin="0,5,0,0" Height="188">
             <GroupBox.Header>
-                <Label Margin="3,0,3,0">ファイル分割</Label>
+                <Label Margin="3,0,3,0">File Format</Label>
             </GroupBox.Header>
             <StackPanel Margin="10">
-                <RadioButton HorizontalAlignment="Left" IsChecked="{Binding SettingService.OutputSingleFile}">１つのファイルに書き出す</RadioButton>
+                <RadioButton HorizontalAlignment="Left" IsChecked="{Binding SettingService.OutputSingleFile}">Export to a single file</RadioButton>
                 <RadioButton
                     Margin="0,10,0,0"
                     HorizontalAlignment="Left"
                     IsChecked="{Binding SettingService.OutputMultiFile}">
-                    １文毎に区切って複数のファイルに書き出す
+                    Export to multiple files (seperated by sentince)
                 </RadioButton>
                 <RadioButton
                     x:Name="charSplit"
                     Margin="0,10,0,0"
                     HorizontalAlignment="Left"
-                    IsChecked="{Binding SettingService.OutputMultiByChar}">
-                    指定された文字列で区切って複数のファイルに書き出す
-                </RadioButton>
-                <StackPanel IsEnabled="{Binding IsChecked, ElementName=charSplit}" Orientation="Horizontal">
-                    <Label Margin="30,0,0,0">区切り文字</Label>
+                    IsChecked="{Binding SettingService.OutputMultiByChar}" Content="Write to multiple files (seperated by character)" Checked="charSplit_Checked"/>
+                <StackPanel IsEnabled="{Binding IsChecked, ElementName=charSplit}" Orientation="Horizontal" Height="38" RenderTransformOrigin="0.5,0.501">
+                    <Label Margin="30,0,0,0" Content="Delimiter"/>
                     <TextBox Width="100" Text="{Binding SettingService.OutputSplitChar}" />
                 </StackPanel>
             </StackPanel>
         </GroupBox>
         <GroupBox Margin="0,10,0,0">
             <GroupBox.Header>
-                <Label Margin="3,0,3,0">ポーズ</Label>
+                <Label Margin="3,0,3,0">Pause</Label>
             </GroupBox.Header>
             <StackPanel Margin="10" Orientation="Horizontal">
                 <StackPanel Margin="0,3,0,3" Orientation="Horizontal">
-                    <Label Width="80">開始ポーズ</Label>
+                    <Label Width="106">Starting Pause</Label>
                     <mah:NumericUpDown
                         Width="100"
                         Maximum="60000"
                         Minimum="0"
                         UpDownButtonsWidth="18"
                         Value="{Binding SettingService.StartPause}" />
-                    <Label Width="90">[ﾐﾘ秒]</Label>
+                    <Label Width="90">[Milisecond]</Label>
                 </StackPanel>
                 <StackPanel Margin="0,3,0,3" Orientation="Horizontal">
-                    <Label Width="80">終了ポーズ</Label>
+                    <Label Width="80">End Pause</Label>
                     <mah:NumericUpDown
                         Width="100"
                         Maximum="60000"
                         Minimum="0"
                         UpDownButtonsWidth="18"
                         Value="{Binding SettingService.EndPause}" />
-                    <Label Width="90">[ﾐﾘ秒]</Label>
+                    <Label Width="90">[Milisecond]</Label>
                 </StackPanel>
             </StackPanel>
         </GroupBox>
         <GroupBox Margin="0,10,0,0">
             <GroupBox.Header>
-                <Label Margin="3,0,3,0">ファイル形式</Label>
+                <Label Margin="3,0,3,0">Audio Format</Label>
             </GroupBox.Header>
             <StackPanel Margin="10">
                 <!--<StackPanel Orientation="Horizontal" Margin="10">
@@ -126,7 +124,7 @@
                             Margin="10,0,0,0"
                             FontSize="12"
                             Foreground="{DynamicResource MahApps.Brushes.Gray5}">
-                            指定のフォーマットで劣化無しで音声波形を保存します。
+                            Lossless audio file (WAV)
                         </Label>
                     </StackPanel>
                 </RadioButton>
@@ -148,7 +146,7 @@
                             Margin="10,0,0,0"
                             FontSize="12"
                             Foreground="{DynamicResource MahApps.Brushes.Gray5}">
-                            音声を圧縮してファイルサイズを小さくします。
+                            Compressed audio file (MP3)
                         </Label>
                     </StackPanel>
                 </RadioButton>
@@ -170,7 +168,7 @@
                             Margin="10,0,0,0"
                             FontSize="12"
                             Foreground="{DynamicResource MahApps.Brushes.Gray5}">
-                            mp3よりもさらにファイルサイズを小さくします。
+                            Super-compressed audio file (WMA)
                         </Label>
                     </StackPanel>
                 </RadioButton>
@@ -178,15 +176,15 @@
         </GroupBox>
         <GroupBox Margin="0,10,0,0">
             <GroupBox.Header>
-                <Label Margin="3,0,3,0">テキストファイル</Label>
+                <Label Margin="3,0,3,0">Text File</Label>
             </GroupBox.Header>
             <StackPanel Margin="10" Orientation="Horizontal">
-                <CheckBox x:Name="text" IsChecked="{Binding SettingService.SaveWithText}">テキストファイルを音声ファイルと一緒に保存する</CheckBox>
+                <CheckBox x:Name="text" IsChecked="{Binding SettingService.SaveWithText}">Save text with audio export</CheckBox>
                 <StackPanel
                     Margin="0,0,0,0"
                     IsEnabled="{Binding IsChecked, ElementName=text}"
                     Orientation="Horizontal">
-                    <Label Margin="20,0,0,0">文字コード :</Label>
+                    <Label Margin="20,0,0,0">Charcter Encoding :</Label>
                     <ComboBox Margin="6,0,0,0" SelectedItem="{Binding SettingService.Encoding}">
                         <ComboBox.Items>
                             <!--<sys:String>SJIS</sys:String>-->
@@ -201,31 +199,31 @@
         </GroupBox>
         <GroupBox Margin="0,10,0,0">
             <GroupBox.Header>
-                <Label Margin="3,0,3,0">音声ファイルパスの指定方法</Label>
+                <Label Margin="3,0,3,0">How to save audio (path)</Label>
             </GroupBox.Header>
             <StackPanel Margin="10">
-                <RadioButton HorizontalAlignment="Left" IsChecked="{Binding SettingService.SaveByDialog}">ファイル保存ダイアログで選択する</RadioButton>
+                <RadioButton HorizontalAlignment="Left" IsChecked="{Binding SettingService.SaveByDialog}">Use a dialog</RadioButton>
                 <RadioButton
                     x:Name="ruleRadioButton"
                     Margin="0,10,0,0"
                     HorizontalAlignment="Left"
                     d:IsChecked="True"
                     IsChecked="{Binding SettingService.SaveByRule}">
-                    ファイル命名規則を指定する
+                    Use naming convention
                 </RadioButton>
                 <StackPanel Margin="20,5,0,0" Visibility="{Binding IsChecked, ElementName=ruleRadioButton, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <DockPanel>
-                        <Label Width="70" DockPanel.Dock="Left">フォルダー</Label>
+                        <Label Width="54" DockPanel.Dock="Left">Folder:</Label>
                         <Button
                             MinWidth="60"
                             Command="{Binding SelectFolderCommand}"
                             DockPanel.Dock="Right">
-                            参照...
+                            Browse...
                         </Button>
-                        <TextBox Text="{Binding RuleFolderPath.Value, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox Text="{Binding RuleFolderPath.Value, UpdateSourceTrigger=PropertyChanged}" Width="588" />
                     </DockPanel>
                     <DockPanel>
-                        <Label Width="70" DockPanel.Dock="Left">命名規則</Label>
+                        <Label Width="90" DockPanel.Dock="Left" Content="Naming rule:"/>
                         <Label
                             Width="60"
                             DockPanel.Dock="Right"
@@ -247,13 +245,13 @@
                         <TextBox Text="{Binding Rule.Value, UpdateSourceTrigger=PropertyChanged}" />
                     </DockPanel>
                     <StackPanel Margin="70,5,60,0">
-                        <mah:DropDownButton Content="プリセットから選択">
+                        <mah:DropDownButton Content="Use Preset">
                             <mah:DropDownButton.Items>
-                                <sys:String>連番_入力文</sys:String>
-                                <sys:String>日時_連番_入力文</sys:String>
-                                <sys:String>日時_連番_キャラ名_入力文</sys:String>
-                                <sys:String>キャラ名\日時_連番_入力文</sys:String>
-                                <sys:String>日付\時刻_連番_キャラ名_入力文</sys:String>
+                                <sys:String>Sequential_Number_Input_Text</sys:String>
+                                <sys:String>DateTime_Sequential_Number_Input_Text</sys:String>
+                                <sys:String>DateTime_Sequential_Number_Character_Name_Input_Text</sys:String>
+                                <sys:String>Character_Name\DateTime_Sequential_Number_Input_Text</sys:String>
+                                <sys:String>Date\Time_Sequential_Number_Character_Name_Input_Text</sys:String>
                             </mah:DropDownButton.Items>
                             <mah:DropDownButton.ItemContainerStyle>
                                 <Style BasedOn="{StaticResource {x:Type MenuItem}}" TargetType="{x:Type MenuItem}">
@@ -268,36 +266,32 @@
                                 <ColumnDefinition Width="140" />
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
-                            <StackPanel>
+                            <StackPanel Margin="-65,0,0,0">
                                 <Button
                                     Margin="0,0,3,3"
                                     Command="{Binding AddTemplateCommand}"
-                                    CommandParameter="yyMMdd_HHmmss">
-                                    日時
-                                </Button>
+                                    CommandParameter="yyMMdd_HHmmss" Content="Date/Time"/>
                                 <Button
                                     Margin="0,3,3,3"
                                     Command="{Binding AddTemplateCommand}"
-                                    CommandParameter="VoicePreset">
-                                    キャラ名
-                                </Button>
+                                    CommandParameter="VoicePreset" Click="Button_Click" Content="Character Name"/>
                             </StackPanel>
-                            <StackPanel Grid.Column="1" Margin="10,0,10,0">
-                                <Button Command="{Binding AddTemplateCommand}" CommandParameter="Text">入力文</Button>
+                            <StackPanel Grid.Column="1" Margin="0,0,335,0" Grid.ColumnSpan="2">
+                                <Button Command="{Binding AddTemplateCommand}" CommandParameter="Text">Input Text</Button>
                                 <DockPanel Margin="3,5,0,0">
-                                    <Label>文字数</Label>
+                                    <Label Width="85">Word Count</Label>
                                     <mah:NumericUpDown
                                         Maximum="30"
                                         Minimum="1"
                                         TrackMouseWheelWhenMouseOver="True"
                                         UpDownButtonsWidth="18"
-                                        Value="{Binding SettingService.RuleTextLength}" />
+                                        Value="{Binding SettingService.RuleTextLength}" Width="91" />
                                 </DockPanel>
                             </StackPanel>
-                            <StackPanel Grid.Column="2" Margin="5,0,0,0">
+                            <StackPanel Grid.Column="2" Margin="46,0,0,0">
                                 <Button Command="{Binding AddTemplateCommand}" CommandParameter="Number">連番</Button>
                                 <DockPanel Margin="3,5,0,0">
-                                    <Label Width="65">桁数</Label>
+                                    <Label Width="87" Content="Digit Count"/>
                                     <mah:NumericUpDown
                                         Maximum="10"
                                         Minimum="1"
@@ -306,13 +300,13 @@
                                         Value="{Binding SettingService.RuleNumDigits}" />
                                 </DockPanel>
                                 <DockPanel Margin="3,5,0,0">
-                                    <Label Width="65">開始番号</Label>
+                                    <Label Width="112" Content="Starting Number"/>
                                     <mah:NumericUpDown
                                         Maximum="2147483647"
                                         Minimum="0"
                                         TrackMouseWheelWhenMouseOver="True"
                                         UpDownButtonsWidth="18"
-                                        Value="{Binding SettingService.RuleStartNum}" />
+                                        Value="{Binding SettingService.RuleStartNum}" Width="214" />
                                 </DockPanel>
                             </StackPanel>
                         </Grid>

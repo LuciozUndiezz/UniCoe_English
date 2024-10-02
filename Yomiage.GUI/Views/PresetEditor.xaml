@@ -26,21 +26,21 @@
                         Command="{Binding SaveCommand}">
                     <DockPanel>
                         <icon:PackIconBoxIcons Kind="SolidSave" Margin="0,0,4,0"/>
-                        <TextBlock VerticalAlignment="Bottom">保存</TextBlock>
+                        <TextBlock VerticalAlignment="Bottom" Text="Save"/>
                     </DockPanel>
                 </Button>
                 <Button Style="{StaticResource IconButton}"
                         Command="{Binding ResetCommand}">
                     <DockPanel>
                         <icon:PackIconBoxIcons Kind="RegularUndo" Margin="0,0,4,0"/>
-                        <TextBlock VerticalAlignment="Bottom">戻す</TextBlock>
+                        <TextBlock VerticalAlignment="Bottom" Text="Undo"/>
                     </DockPanel>
                 </Button>
                 <Button Style="{StaticResource IconButton}"
                         Command="{Binding InitializeCommand}">
                     <DockPanel>
                         <icon:PackIconBoxIcons Kind="RegularRefresh" Margin="0,0,4,0"/>
-                        <TextBlock VerticalAlignment="Bottom">初期値</TextBlock>
+                        <TextBlock VerticalAlignment="Bottom" Text="Reset"/>
                     </DockPanel>
                 </Button>
             </StackPanel>
@@ -52,9 +52,7 @@
                     <Label Padding="8,1,0,1"
                    BorderThickness="0,0,0,1"
                    BorderBrush="DimGray"
-                   VerticalAlignment="Center">
-                        プリセット名
-                    </Label>
+                   VerticalAlignment="Center" Content="Preset Name"/>
                     <TextBox Margin="0,3,0,10" Text="{Binding PresetName.Value, UpdateSourceTrigger=PropertyChanged}"
                              IsReadOnly="{Binding NameReadOnly.Value}"/>
 
@@ -77,9 +75,7 @@
                         <Label Padding="8,1,0,1"
                            BorderThickness="0,0,0,1"
                            BorderBrush="DimGray"
-                           VerticalAlignment="Center">
-                            ボイス
-                        </Label>
+                           VerticalAlignment="Center" Content="Voice"/>
                     </DockPanel>
                     <DockPanel Margin="0,3,0,5" Height="52"
                                Visibility="{Binding SinglePresetMode.Value, Converter={BoolToVisibilityConverter}}"
@@ -104,9 +100,7 @@
                                 </Button>
                                 <Label Padding="8,1,0,1"
                                    BorderBrush="DimGray"
-                                   VerticalAlignment="Center">
-                                    メイン
-                                </Label>
+                                   VerticalAlignment="Center" Content="Main"/>
                             </DockPanel>
                             <Grid Margin="0,3,0,5" Height="52"
                                   Background="{DynamicResource MahApps.Brushes.Gray10}"
@@ -124,9 +118,7 @@
                                 </Button>
                                 <Label Padding="8,1,0,1"
                                    BorderBrush="DimGray"
-                                   VerticalAlignment="Center">
-                                    サブ
-                                </Label>
+                                   VerticalAlignment="Center" Content="Sub"/>
                             </DockPanel>
                             <Button Margin="0,3,0,0" Height="52" BorderThickness="0"
                                 Command="{Binding SelectSubPresetCommand}"
@@ -146,9 +138,7 @@
                         <Label Padding="8,1,0,1"
                            BorderThickness="0,0,0,1"
                            BorderBrush="DimGray"
-                           VerticalAlignment="Center">
-                            エンジン
-                        </Label>
+                           VerticalAlignment="Center" Content="Engine"/>
                     </DockPanel>
                     <DockPanel Margin="0,3,0,5" Height="52"
                                Background="{DynamicResource MahApps.Brushes.Gray10}">
@@ -172,7 +162,7 @@
                     </Style>
                 </StackPanel.Resources>
 
-                <!-- 音声効果 -->
+                <!-- Voice Effect -->
                 <Grid>
                     <!--<Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -188,9 +178,7 @@
                     <Label Margin="3,0,3,0" Padding="8,1,0,1"
                        BorderThickness="0,0,0,1"
                        BorderBrush="DimGray"
-                       Grid.ColumnSpan="4" VerticalAlignment="Center">
-                        音声効果
-                    </Label>
+                       Grid.ColumnSpan="4" VerticalAlignment="Center" Content="Voice Effect"/>
 
                     <StackPanel Orientation="Horizontal" Grid.Row="2">
                         <cont:MySlider Grid.Row="2" Grid.Column="0"
@@ -281,7 +269,7 @@
 
                 </Grid>
 
-                <!-- ポーズの長さ -->
+                <!-- Pause Length -->
                 <Grid Width="150" Margin="3,0,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -292,13 +280,13 @@
                         <RowDefinition Height="10"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Border Grid.ColumnSpan="2" BorderThickness="0,0,0,1" BorderBrush="DimGray" Height="18">
+                    <Border Grid.ColumnSpan="2" BorderThickness="0,0,0,1" BorderBrush="DimGray" Margin="0,1,0,1">
                         <CheckBox x:Name="PauseEnable" Margin="10,0,3,0" Padding="4,1,0,1"
                                   IsChecked="{Binding PauseOverride.Value}"
                               BorderThickness="0,0,0,1"
                               BorderBrush="DimGray"
                               FontSize="14"
-                              Content="ポーズの長さ">
+                              Content="Pause Length" Checked="PauseEnable_Checked">
                             <CheckBox.LayoutTransform>
                                 <ScaleTransform ScaleX="0.8" ScaleY="0.8"/>
                             </CheckBox.LayoutTransform>
@@ -306,7 +294,7 @@
                     </Border>
 
                     <cont:MySlider Grid.Row="2" Grid.Column="0"
-                                   Title="短ポーズ" Unit="[ﾐﾘ秒]"
+                                   Title="Short Pause" Unit="[Milisecond]"
                                    Value="{Binding ShortPause.Value}"
                                    DefaultValue="{Binding ShortPauseSetting.Value.DefaultValue}"
                                    Minimum="{Binding ShortPauseSetting.Value.Min}"
@@ -318,7 +306,7 @@
                                    Foreground="{StaticResource AccentBlue}"/>
 
                     <cont:MySlider Grid.Row="2" Grid.Column="1"
-                                   Title="長ポーズ" Unit="[ﾐﾘ秒]"
+                                   Title="Long Pause" Unit="[Milisecond]"
                                    Value="{Binding LongPause.Value}"
                                    DefaultValue="{Binding LongPauseSetting.Value.DefaultValue}"
                                    Minimum="{Binding LongPauseSetting.Value.Min}"

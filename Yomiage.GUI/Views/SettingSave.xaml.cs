@@ -24,5 +24,15 @@ namespace Yomiage.GUI.Views
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void charSplit_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

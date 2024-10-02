@@ -79,5 +79,10 @@ namespace Yomiage.GUI.Views
 
             return BitmapFrame.Create(renderBitmap);
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -25,9 +25,7 @@
             <Label Padding="8,1,0,1"
                    BorderThickness="0,0,0,1"
                    BorderBrush="DimGray"
-                   VerticalAlignment="Center">
-                見出し（30文字以内）
-            </Label>
+                   VerticalAlignment="Center" Content="Title (Less than 30 Characters)"/>
             <TextBox Text="{Binding OriginalText.Value, UpdateSourceTrigger=PropertyChanged}" Margin="0,3,0,13" MaxLength="30"/>
 
             <!--<Label Padding="8,1,0,1"
@@ -53,9 +51,7 @@
             <Label Padding="8,1,0,1"
                    BorderThickness="0,0,0,1"
                    BorderBrush="DimGray"
-                   VerticalAlignment="Center">
-                優先度
-            </Label>
+                   VerticalAlignment="Center" Content="Priority"/>
             <ComboBox FontSize="12"
                       ItemsSource="{x:Static const:ConstData.Prioritys}"
                       SelectedItem="{Binding Priority.Value}"/>
@@ -75,7 +71,7 @@
                         DockPanel.Dock="Right" IsEnabled="False" Visibility="Collapsed">
                     <DockPanel>
                         <icon:PackIconBoxIcons Kind="SolidShareAlt" RotationAngle="90" Margin="0,0,4,0"/>
-                        <TextBlock VerticalAlignment="Bottom">標準語に変換</TextBlock>
+                        <TextBlock VerticalAlignment="Bottom">Convert To Standard Language</TextBlock>
                     </DockPanel>
                 </Button>
                 <StackPanel Orientation="Horizontal">
@@ -83,41 +79,41 @@
                             Command="{Binding PlayCommand}">
                         <DockPanel>
                             <icon:PackIconBoxIcons Kind="RegularPlayCircle" Margin="0,0,4,0"/>
-                            <TextBlock VerticalAlignment="Bottom">再生</TextBlock>
+                            <TextBlock VerticalAlignment="Bottom">Play</TextBlock>
                         </DockPanel>
                     </Button>
                     <Button Style="{StaticResource IconButton}"
                             Command="{Binding StopCommand}">
                         <DockPanel>
                             <icon:PackIconBoxIcons Kind="RegularStopCircle" Margin="0,0,4,0"/>
-                            <TextBlock VerticalAlignment="Bottom">停止</TextBlock>
+                            <TextBlock VerticalAlignment="Bottom">Stop</TextBlock>
                         </DockPanel>
                     </Button>
                     <Button Style="{StaticResource IconButton}" Margin="18,0,6,0"
                             Command="{Binding RegisterCommand}">
                         <DockPanel>
                             <icon:PackIconBoxIcons Kind="SolidSave" Margin="0,0,4,0"/>
-                            <TextBlock VerticalAlignment="Bottom">登録</TextBlock>
+                            <TextBlock VerticalAlignment="Bottom">Save</TextBlock>
                         </DockPanel>
                     </Button>
                     <Button Style="{StaticResource IconButton}"
                             Command="{Binding UnRegisterCommand}">
                         <DockPanel>
                             <icon:PackIconMaterial Kind="TrashCanOutline" Margin="0,0,4,0"/>
-                            <TextBlock VerticalAlignment="Bottom">登録解除</TextBlock>
+                            <TextBlock VerticalAlignment="Bottom">Delete</TextBlock>
                         </DockPanel>
                     </Button>
                     <Button Style="{StaticResource IconButton}" Command="{Binding OpenDialogCommand}" CommandParameter="WordListDialog">
                         <DockPanel>
                             <icon:PackIconMaterial Kind="FormatListBulletedSquare" Margin="0,0,6,0"/>
-                            <TextBlock VerticalAlignment="Bottom">一覧</TextBlock>
+                            <TextBlock VerticalAlignment="Bottom">Preview</TextBlock>
                         </DockPanel>
                     </Button>
                     <Button Style="{StaticResource IconButton}" Margin="18,0,6,0"
                             Command="{Binding ClearCommand}">
                         <DockPanel>
                             <icon:PackIconBoxIcons Kind="RegularRefresh" Margin="0,0,4,0"/>
-                            <TextBlock VerticalAlignment="Bottom">クリア</TextBlock>
+                            <TextBlock VerticalAlignment="Bottom">Clear</TextBlock>
                         </DockPanel>
                     </Button>
                 </StackPanel>

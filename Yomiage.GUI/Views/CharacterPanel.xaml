@@ -17,13 +17,13 @@
     <Grid Background="Transparent">
         <Grid.ContextMenu>
             <ContextMenu>
-                <MenuItem Header="目パチ" IsChecked="{Binding EyeEnable.Value}"  IsCheckable="True" Margin="0,6,0,0"/>
+                <MenuItem Header="Blinking" IsChecked="{Binding EyeEnable.Value}"  IsCheckable="True" Margin="0,6,0,0"/>
                 <Separator/>
-                <MenuItem Header="口パク" IsChecked="{Binding MouthEnable.Value}"  IsCheckable="True"/>
+                <MenuItem Header="Lip Sync" IsChecked="{Binding MouthEnable.Value}"  IsCheckable="True"/>
                 <Separator/>
-                <MenuItem Header="大きく表示" IsChecked="{Binding IsCharacterMaximized.Value}" IsCheckable="True"/>
+                <MenuItem Header="Full Art" IsChecked="{Binding IsCharacterMaximized.Value}" IsCheckable="True"/>
                 <Separator/>
-                <MenuItem Header="表示サイズ">
+                <MenuItem Header="Window Size">
                     <MenuItem Header="50%" IsChecked="{Binding Size.Value, Mode=TwoWay, Converter={StaticResource EnumToBoolean}, ConverterParameter=S50}" IsCheckable="True"/>
                     <MenuItem Header="60%" IsChecked="{Binding Size.Value, Mode=TwoWay, Converter={StaticResource EnumToBoolean}, ConverterParameter=S60}" IsCheckable="True"/>
                     <MenuItem Header="75%" IsChecked="{Binding Size.Value, Mode=TwoWay, Converter={StaticResource EnumToBoolean}, ConverterParameter=S75}" IsCheckable="True"/>
@@ -41,7 +41,7 @@
                     <MenuItem Header="10min" IsChecked="{Binding Sleep.Value, Mode=TwoWay, Converter={StaticResource EnumToBoolean}, ConverterParameter=SM10MIN}" IsCheckable="True"/>
                     <MenuItem Header="30min" IsChecked="{Binding Sleep.Value, Mode=TwoWay, Converter={StaticResource EnumToBoolean}, ConverterParameter=SM30MIN}" IsCheckable="True"/>
                     <MenuItem Header="1hour" IsChecked="{Binding Sleep.Value, Mode=TwoWay, Converter={StaticResource EnumToBoolean}, ConverterParameter=SM1HOUR}" IsCheckable="True"/>
-                    <MenuItem Header="寝かせない" IsChecked="{Binding Sleep.Value, Mode=TwoWay, Converter={StaticResource EnumToBoolean}, ConverterParameter=NONE}" IsCheckable="True"/>
+                    <MenuItem Header="Never" IsChecked="{Binding Sleep.Value, Mode=TwoWay, Converter={StaticResource EnumToBoolean}, ConverterParameter=NONE}" IsCheckable="True"/>
                 </MenuItem>
             </ContextMenu>
         </Grid.ContextMenu>

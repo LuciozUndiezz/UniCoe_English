@@ -24,7 +24,7 @@
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
             <StackPanel Margin="3" Orientation="Horizontal">
 
-                <!--  音声効果  -->
+                <!--  Voice Effect  -->
                 <Grid Width="300">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
@@ -44,7 +44,7 @@
                         VerticalAlignment="Center"
                         BorderBrush="DimGray"
                         BorderThickness="0,0,0,1">
-                        音声効果
+                        Voice Effect
                     </Label>
 
                     <Button
@@ -64,7 +64,7 @@
                     </Button>
 
                     <cont:MySlider
-                        Title="音量"
+                        Title="Volume"
                         Grid.Row="2"
                         Grid.Column="0"
                         DefaultValue="1"
@@ -74,11 +74,11 @@
                         SmallChange="0.01"
                         StringFormat="0.00"
                         TickFrequency="0.1"
-                        Unit="[倍]"
+                        Unit="[Multiplier]"
                         Value="{Binding SettingService.MasterVolume.Value, Mode=TwoWay}" />
 
                     <cont:MySlider
-                        Title="話速"
+                        Title="Talk Speed"
                         Grid.Row="2"
                         Grid.Column="1"
                         DefaultValue="1"
@@ -88,11 +88,11 @@
                         SmallChange="0.01"
                         StringFormat="0.00"
                         TickFrequency="0.1"
-                        Unit="[倍]"
+                        Unit="[Multiplier]"
                         Value="{Binding SettingService.MasterSpeed.Value, Mode=TwoWay}" />
 
                     <cont:MySlider
-                        Title="高さ"
+                        Title="Pitch"
                         Grid.Row="2"
                         Grid.Column="2"
                         DefaultValue="1"
@@ -102,11 +102,11 @@
                         SmallChange="0.01"
                         StringFormat="0.00"
                         TickFrequency="0.1"
-                        Unit="[倍]"
+                        Unit="[Multiplier]"
                         Value="{Binding SettingService.MasterPitch.Value, Mode=TwoWay}" />
 
                     <cont:MySlider
-                        Title="抑揚"
+                        Title="Emphasis"
                         Grid.Row="2"
                         Grid.Column="3"
                         DefaultValue="1"
@@ -116,12 +116,12 @@
                         SmallChange="0.01"
                         StringFormat="0.00"
                         TickFrequency="0.1"
-                        Unit="[倍]"
+                        Unit="[Multiplier]"
                         Value="{Binding SettingService.MasterEmphasis.Value, Mode=TwoWay}" />
 
                 </Grid>
 
-                <!--  ポーズの長さ  -->
+                <!-- Pause Length  -->
                 <Grid Width="225" Margin="3,0,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
@@ -140,7 +140,7 @@
                         VerticalAlignment="Center"
                         BorderBrush="DimGray"
                         BorderThickness="0,0,0,1">
-                        ポーズの長さ
+                        Pause Length
                     </Label>
 
                     <Button
@@ -160,7 +160,7 @@
                     </Button>
 
                     <cont:MySlider
-                        Title="短ポーズ"
+                        Title="Short Pause"
                         Grid.Row="2"
                         Grid.Column="0"
                         DefaultValue="150"
@@ -170,11 +170,11 @@
                         SmallChange="1"
                         StringFormat="0"
                         TickFrequency="10"
-                        Unit="[ﾐﾘ秒]"
+                        Unit="[Milisec.]"
                         Value="{Binding SettingService.MasterShortPause.Value, Mode=TwoWay}" />
 
                     <cont:MySlider
-                        Title="長ポーズ"
+                        Title="Long Pause"
                         Grid.Row="2"
                         Grid.Column="1"
                         DefaultValue="370"
@@ -184,11 +184,11 @@
                         SmallChange="1"
                         StringFormat="0"
                         TickFrequency="10"
-                        Unit="[ﾐﾘ秒]"
+                        Unit="[Milisec.]"
                         Value="{Binding SettingService.MasterLongPause.Value, Mode=TwoWay}" />
 
                     <cont:MySlider
-                        Title="文末ポーズ"
+                        Title="Sentence Pause"
                         Grid.Row="2"
                         Grid.Column="2"
                         DefaultValue="800"
@@ -198,7 +198,7 @@
                         SmallChange="1"
                         StringFormat="0"
                         TickFrequency="10"
-                        Unit="[ﾐﾘ秒]"
+                        Unit="[Milisec.]"
                         Value="{Binding SettingService.MasterEndPause.Value, Mode=TwoWay}" />
 
                 </Grid>
@@ -206,7 +206,7 @@
             </StackPanel>
         </ScrollViewer>
 
-        <!--  記号ポーズ  -->
+        <!--  Symbol Pause  -->
         <Grid Grid.Column="2" Margin="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="20" />
@@ -220,7 +220,7 @@
                 VerticalAlignment="Center"
                 BorderBrush="DimGray"
                 BorderThickness="0,0,0,1">
-                記号ポーズ
+                Symbol Pause
             </Label>
 
             <ListView
@@ -234,11 +234,11 @@
                         <GridViewColumn
                             Width="100"
                             DisplayMemberBinding="{Binding key}"
-                            Header="記号" />
+                            Header="Symbol" />
                         <GridViewColumn
                             Width="150"
                             DisplayMemberBinding="{Binding span_ms}"
-                            Header="ポーズの長さ [ﾐﾘ秒]" />
+                            Header="Pause Length [Milisec.]" />
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -250,7 +250,7 @@
                     Style="{StaticResource IconButton}">
                     <DockPanel>
                         <icon:PackIconBoxIcons Margin="0,0,4,0" Kind="RegularNews" />
-                        <TextBlock VerticalAlignment="Bottom">新規</TextBlock>
+                        <TextBlock VerticalAlignment="Bottom">New</TextBlock>
                     </DockPanel>
                 </Button>
                 <Button
@@ -259,7 +259,7 @@
                     Style="{StaticResource IconButton}">
                     <DockPanel>
                         <icon:PackIconBoxIcons Margin="0,0,4,0" Kind="RegularEditAlt" />
-                        <TextBlock VerticalAlignment="Bottom">変更</TextBlock>
+                        <TextBlock VerticalAlignment="Bottom">Edit</TextBlock>
                     </DockPanel>
                 </Button>
                 <Button
@@ -268,7 +268,7 @@
                     Style="{StaticResource IconButton}">
                     <DockPanel>
                         <icon:PackIconMaterial Margin="0,0,4,0" Kind="TrashCanOutline" />
-                        <TextBlock VerticalAlignment="Bottom">削除</TextBlock>
+                        <TextBlock VerticalAlignment="Bottom">Delete</TextBlock>
                     </DockPanel>
                 </Button>
             </StackPanel>

@@ -24,5 +24,10 @@ namespace Yomiage.GUI.Views
         {
             InitializeComponent();
         }
+
+        private void PauseEnable_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
