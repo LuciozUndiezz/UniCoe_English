@@ -169,7 +169,7 @@
                         <!--<Separator/>
                         <MenuItem Header="標準プリセットを全て初期化" Margin="0,0,0,6"/>-->
                     </MenuItem>
-                    <MenuItem Header=" フレーズ" Visibility="Collapsed">
+                    <MenuItem Header=" Phrase" Visibility="Collapsed">
                         <MenuItem
                             Margin="0,6,0,6"
                             Command="{Binding OpenDialogCommand}"
@@ -183,7 +183,7 @@
                             CommandParameter="WordListDialog"
                             Header="Word List" />
                     </MenuItem>
-                    <MenuItem Header=" 表示">
+                    <MenuItem Header="Elements">
                         <MenuItem
                             Margin="0,6,0,0"
                             Header="Voice Preset"
