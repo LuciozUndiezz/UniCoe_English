@@ -15,9 +15,9 @@
         WindowStartupLocation="CenterScreen"
         Title="WaitDialog" Height="200" Width="300">
     <Grid>
-        <Label Margin="74,60,28,105">音声保存</Label>
+        <Label Margin="74,60,28,105" Content="Save Voice"/>
         <Image Source="../coloricon.png" Margin="23,64,224,86"/>
-        <Button x:Name="cancelButton" Margin="195,61,23,110" BorderThickness="0" Padding="0" Click="Button_Click">キャンセル</Button>
+        <Button x:Name="cancelButton" Margin="195,61,23,110" BorderThickness="0" Padding="0" Click="Button_Click" Content="Cancel"/>
         <ProgressBar x:Name="progress" Margin="79,90,23,86" Value="0.0" Minimum="0" Maximum="1"/>
         <TextBlock x:Name="text" Margin="24,117,23,33" Text="" TextWrapping="Wrap"
                    Foreground="{DynamicResource MahApps.Brushes.ThemeForeground}" Opacity="0.7"/>

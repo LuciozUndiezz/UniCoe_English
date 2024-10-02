@@ -326,7 +326,7 @@
                 DockPanel.Dock="Right"
                 Orientation="Horizontal">
                 <Label Content="{Binding Num.Value}" />
-                <TextBlock>Character (Letters)</TextBlock>
+                <TextBlock>Character Count</TextBlock>
             </StackPanel>
             <StackPanel
                 Margin="0,0,6,0"
@@ -334,9 +334,9 @@
                 DockPanel.Dock="Right"
                 Orientation="Horizontal">
                 <Label Content="{Binding Row.Value}" />
-                <TextBlock>行、</TextBlock>
+                <TextBlock>Row、</TextBlock>
                 <TextBlock Text="{Binding Col.Value}" />
-                <TextBlock>列</TextBlock>
+                <TextBlock>Column</TextBlock>
             </StackPanel>
             <!--<Button DockPanel.Dock="Right">記号ポーズ辞書</Button>
             <Button DockPanel.Dock="Right">単語辞書</Button>

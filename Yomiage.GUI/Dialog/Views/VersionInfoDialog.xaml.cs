@@ -24,5 +24,10 @@ namespace Yomiage.GUI.Dialog.Views
         {
             InitializeComponent();
         }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

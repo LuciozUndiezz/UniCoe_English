@@ -7,17 +7,17 @@
              mc:Ignorable="d">
     <DockPanel>
         <StackPanel DockPanel.Dock="Top" Margin="0,5,0,0">
-            <Label Content="{x:Static const:ConstData.AppName}"/>
+            <Label Content="ユニコエ | UniCoe"/>
             <StackPanel Orientation="Horizontal">
                 <Label>version</Label>
                 <Label Content="{Binding Version.Value}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label>作者：</Label>
+                <Label Content="Author："/>
                 <Button Command="{Binding AuthorCommand}" BorderThickness="0">ビス</Button>
             </StackPanel>
             <Label>Copyright 2021 bisu</Label>
-            <Label Margin="0,10,0,0">ライブラリ情報</Label>
+            <Label Margin="0,10,0,0" Content="Library Information"/>
         </StackPanel>
 
         <DockPanel DockPanel.Dock="Bottom">
@@ -26,12 +26,12 @@
             <Label/>
         </DockPanel>
 
-        <ListView MinHeight="300" ItemsSource="{Binding ComponentList}">
+        <ListView MinHeight="300" ItemsSource="{Binding ComponentList}" SelectionChanged="ListView_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ライブラリ名" DisplayMemberBinding="{Binding Name}" Width="200"/>
-                    <GridViewColumn Header="バージョン" DisplayMemberBinding="{Binding Version}" Width="100"/>
-                    <GridViewColumn Header="ライセンス" Width="100">
+                    <GridViewColumn Header="Library Name" DisplayMemberBinding="{Binding Name}" Width="200"/>
+                    <GridViewColumn Header="Version" DisplayMemberBinding="{Binding Version}" Width="100"/>
+                    <GridViewColumn Header="Licence" Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Content="表示" Command="{Binding ShowCommand}" Visibility="{Binding CanShow.Value, Converter={StaticResource BooleanToVisibilityConverter}}" MinHeight="22" Height="22" Padding="0"/>

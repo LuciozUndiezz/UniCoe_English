@@ -20,17 +20,17 @@
                 Width="*"
                 Binding="{Binding Operation}"
                 IsReadOnly="True"
-                Header="操作内容" />
+                Header="Command" />
             <DataGridTextColumn
                 Width="200"
                 Binding="{Binding Key}"
                 IsReadOnly="True"
-                Header="ショートカットキー" />
+                Header="Keyboard Shortcut" />
             <DataGridTextColumn
                 Width="200"
                 Binding="{Binding Target}"
                 IsReadOnly="True"
-                Header="操作対象" />
+                Header="Operable Object" />
         </DataGrid.Columns>
         <DataGrid.Style>
             <Style BasedOn="{StaticResource MahApps.Styles.DataGrid}" TargetType="{x:Type DataGrid}">

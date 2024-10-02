@@ -15,14 +15,14 @@
             <StackPanel Orientation="Horizontal">
                 <Label
                     Margin="0,0,0,-10"
-                    Content="ファイルの場所"
+                    Content="File Location"
                     FontSize="12" />
                 <Button
                     MinHeight="18"
                     Padding="20,0"
                     Command="{Binding OpenLicenseCommand}"
                     FontSize="16">
-                    開く
+                    Open
                 </Button>
             </StackPanel>
             <TextBox
