@@ -186,15 +186,15 @@
                     <MenuItem Header="Elements">
                         <MenuItem
                             Margin="0,6,0,0"
-                            Header="Voice Preset"
+                            Header="Voice List"
                             IsCheckable="True"
                             IsChecked="{Binding PresetVisible.Value}" />
                         <MenuItem
-                            Header="Tuning"
+                            Header="Tuning Editor"
                             IsCheckable="True"
                             IsChecked="{Binding TuningVisible.Value}" />
                         <MenuItem
-                            Header="Character"
+                            Header="Character Image"
                             IsCheckable="True"
                             IsChecked="{Binding CharacterVisible.Value}" />
                         <Separator />
